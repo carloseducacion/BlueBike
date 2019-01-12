@@ -74,7 +74,7 @@ var LoginPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header no-border color=\"primary\">\n  <ion-toolbar color=\"primary\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-toggle>\n        <ion-button>\n          <ion-icon slot=\"icon-only\" name=\"menu\"></ion-icon>\n        </ion-button>\n      </ion-menu-toggle>\n    </ion-buttons>\n    <ion-title>\n      <span style=\"font-weight:normal\">BlueBike</span>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding style=\"background: none transparent;\">\n  <img src=\"../../../assets/imgs/tree.gif\" height=\"100%\">\n</ion-content>"
+module.exports = "<ion-header no-border color=\"primary\">\n  <ion-toolbar color=\"primary\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-toggle>\n        <ion-button>\n          <ion-icon slot=\"icon-only\" name=\"menu\"></ion-icon>\n        </ion-button>\n      </ion-menu-toggle>\n    </ion-buttons>\n    <ion-title>\n      <span style=\"font-weight:normal\">BlueBike</span>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding style=\"background: none transparent;\">\n  <img src=\"assets/imgs/tree.gif\" height=\"100%\">\n</ion-content>"
 
 /***/ }),
 
