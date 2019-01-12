@@ -1,0 +1,64 @@
+<ion-header no-border color="primary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>
+      <span style="font-weight:normal">BlueBike</span>
+    </ion-title>
+  </ion-toolbar>
+  <ion-card color="primary">
+    <ion-row>
+      <ion-col size="4" style="text-align: center">
+        <ion-avatar style="background-color:var(--ion-color-primary);position:relative;top:34px">
+          <img [src]="this.urlFirst?getImagen(this.urlSecond):'../../../assets/icon/defaultAvatar.png'" style="width:100px;margin-left:1.5rem">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="4" style="text-align: center">
+        <ion-avatar style="background-color:var(--ion-color-primary);position:relative;top:5px">
+          <img [src]="this.urlSecond?getImagen(this.urlFirst):'../../../assets/icon/defaultAvatar.png'" style="width:100px;margin-left:1.3rem">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="4" style="text-align: center">
+        <ion-avatar style="background-color:var(--ion-color-primary);position:relative;top:47px">
+          <img [src]="this.urlThird?getImagen(this.urlThird):'../../../assets/icon/defaultAvatar.png'" style="width:100px;margin-left:1.25rem">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img src="../../../assets/imgs/podium.png">
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="this.updateRanking($event,true)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="{{'pulltoload' | translate}}" refreshingSpinner="null"
+      refreshingText="">
+      <img src="../../../assets/imgs/loading.svg" style="width:48px !important;margin:auto;position:relative;top:16px">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-item *ngFor="let item of listadoRanking;let i = index">
+    <ion-icon *ngIf="i<3" name="medal" slot="start" [style.color]="i==0?'gold':(i==1?'grey':'orange')"></ion-icon>
+    <ion-icon *ngIf="i>2" name="person" slot="start"></ion-icon>
+    <ion-avatar slot="end" style="background-color:var(--ion-color-primary)">
+      <img [src]="getImagen(item.avatar)" style="margin:auto;width:100px">
+    </ion-avatar>
+    <ion-label>
+      <h3>#{{(i+1)}}
+        {{item.nombre}}</h3>
+      <h4>{{item.total}} {{"points" | translate}}</h4>
+    </ion-label>
+  </ion-item>
+
+  <ion-infinite-scroll #infiniteScroll threshold="10px" (ionInfinite)="updateRanking($event,false)">
+    <ion-infinite-scroll-content loadingSpinner="null" loadingText="">
+      <img src="../../../assets/imgs/loading.svg" style="width:48px !important;margin:auto;position:relative">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

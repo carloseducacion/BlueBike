@@ -1,0 +1,54 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+    <ion-title style="text-align:center !important">
+     <!--<img style="vertical-align:middle;display:inline-block" src="../../assets/icon/BBIcon400.png" height="35" style="margin:0">-->
+     <span style="font-weight:normal;font-size:0.95rem">{{"login" | translate | capitalize}}</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="primary">
+    <ion-grid *ngIf="!isLogged()">
+        <ion-row>
+          <ion-col>
+              <ion-card color="primary" style="height:100%;border: none !important;box-shadow: none !important;">
+                  <ion-card-header>
+                      <ion-card-title style="text-align: center">{{"teachers" |translate |capitalize }}</ion-card-title>
+                  </ion-card-header>
+                    <ion-card-content>
+                  <form [formGroup]="todo" (ngSubmit)="logForm()"> 
+                      <ion-item>
+                        <ion-input #user id="user" type="text" formControlName="user" placeholder="{{'userMoodle' |translate }}" (keyup.enter)="handleLogin($event)"></ion-input> 
+                      </ion-item>
+                      <ion-item>
+                        <ion-input #pass id="pass" type="password" formControlName="pass" placeholder="{{'passMoodle' | translate }}" (keyup.enter)="handleLogin($event)"></ion-input> 
+                      </ion-item>
+                      
+                      <ion-button [color]="todo.valid? 'tertiary' : 'medium'" type="submit" expand="full" style="height:3rem;width:100%;padding:0px;margin:0px;vertical-align: middle;font-size:1.15rem" [disabled]="!todo.valid">{{"dologin" | translate}}</ion-button>
+                    
+                    </form>
+                  </ion-card-content>
+              </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row >
+            <ion-col>
+                <ion-card style="height:100%;border: none !important;box-shadow: none !important;">
+                    <ion-card-header color="primary">
+                        <ion-card-title style="text-align: center">{{"students" |translate |capitalize }}
+                        <div style="text-align: center;font-size: 0.75rem">({{"scanningQR" |translate}})</div>
+                        </ion-card-title>
+                    </ion-card-header>
+                      <ion-card-content color="primary" style="height:100%;text-align:center">
+                      
+                            <ion-button color="primary" style="width:100%;height:auto;box-shadow: none !important;border:none;--box-shadow:none !important" fill="solid" (click)="loginQR()">
+                                <ion-icon name="aperture" style="zoom:6.0;"></ion-icon>
+                              </ion-button>
+                   
+                     
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+</ion-content>

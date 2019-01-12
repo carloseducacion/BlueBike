@@ -1,0 +1,25 @@
+
+ion-grid {
+    height: 100%;
+  
+    ion-row {
+      height: 50%;
+    }
+  }
+  ion-card {
+      margin:1px !important;
+      padding:2px !important;
+      ion-card-header{
+        padding:4px;
+      }
+      ion-card-content{
+        padding:4px;
+      }
+  }
+  ion-input{
+      padding:2px;
+      font-size:1.1rem;
+  }
+  ion-card-title{
+      font-weight: normal;
+  }

@@ -1,0 +1,17 @@
+<ion-tabs >
+    
+    <ion-tab-bar slot="bottom" color="primary">
+ 
+     <ion-tab-button tab="home" *ngIf="this.authS.isLogged()">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>{{"home" | translate}}</ion-label>
+      </ion-tab-button>
+ 
+     <ion-tab-button tab="ranking" *ngIf="this.authS.isLogged()">
+        <ion-icon name="podium"></ion-icon>
+        <ion-label>Ranking</ion-label>
+      </ion-tab-button>
+ 
+    </ion-tab-bar>
+ 
+  </ion-tabs>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "927021436701",
+    "firebase_url": "https://bluebike-601a9.firebaseio.com",
+    "project_id": "bluebike-601a9",
+    "storage_bucket": "bluebike-601a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927021436701:android:e29c8e0ba93376af",
+        "android_client_info": {
+          "package_name": "com.bluebike.CarlosSerrano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927021436701-9dm6hpibbfr01k9jpcgaq0uas6i1ira1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6ghkqbY9M0FZv5-lzRnszkftdMsZn7ng"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

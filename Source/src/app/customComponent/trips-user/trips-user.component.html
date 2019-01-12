@@ -1,0 +1,37 @@
+<ion-card color="primary" style="margin:auto">
+    <ion-card-header>
+        <ion-toolbar color="primary">
+            <ion-buttons slot="start">
+                <ion-button >
+                  <ion-icon slot="icon-only" name=""></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            <ion-buttons slot="end">
+              <ion-button (click)="closeModal(false)">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-title>
+                <ion-avatar style="background-color:var(--ion-color-primary);margin:auto">
+                    <img [src]="getImagen(data.avatar)"/>
+                  </ion-avatar>
+                  <br>
+                  <ion-card-subtitle>{{data.nombre}}</ion-card-subtitle>
+                  <ion-card-title>{{data.puntos}} {{"points" | translate}} <br>(Total: {{data.total}} {{"points" | translate}})</ion-card-title>
+            </ion-title>
+          </ion-toolbar>
+      
+     
+    </ion-card-header>
+    <ion-card-content style="font-size: 1.1rem">
+        <p style="max-height:180px!important;overflow-y: scroll;margin-bottom: 5px">
+        <ion-item *ngFor="let item of data.viajes;let i = index" color="primary">
+          <ion-label style="text-align:center">
+            {{item.fecha}}
+            <ion-badge color="danger" style="margin-left:10px" slot="end">#{{data.totalviajes-i}}</ion-badge>
+          </ion-label>
+        
+        </ion-item>
+      </p>
+    </ion-card-content>
+  </ion-card>

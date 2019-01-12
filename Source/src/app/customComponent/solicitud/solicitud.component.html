@@ -1,0 +1,41 @@
+<ion-card color="primary" style="margin:auto">
+    <ion-card-header>
+        <ion-toolbar color="primary">
+            <ion-buttons slot="start">
+                <ion-button >
+                  <ion-icon slot="icon-only" name=""></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            <ion-buttons slot="end">
+              <ion-button (click)="closeModal(false)">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-title>
+                <ion-avatar style="background-color:var(--ion-color-primary);margin:auto">
+                    <img [src]="getImagen(data.avatar)"/>
+                    
+                  </ion-avatar>
+                  <ion-card-subtitle>{{data.nombre}}</ion-card-subtitle>
+                  <ion-card-title>{{data.puntos}} {{"points" | translate}}</ion-card-title>
+            </ion-title>
+          </ion-toolbar>
+      
+     
+    </ion-card-header>
+  
+    <ion-card-content style="font-size: 1.1rem">
+      <p style="margin-bottom: 5px">{{"requested" | translate}} {{data.premio | translate}} <br>{{"costs" | translate}} {{data.coste}} {{"points" | translate}}</p>
+      <p *ngIf="!valid" style="color:crimson"> {{"nopoints" | translate}} </p>
+      <ion-button color="danger" style="margin-right:20px" (click)="presentAlertConfirm('removeReq','d',data)">
+          <ion-icon slot="start" name="thumbs-down"></ion-icon>
+          {{"remove" | translate}}
+      </ion-button>
+      <ion-button color="success" (click)="presentAlertConfirm('approveReq','a',data)" [disabled]="!valid">
+          <ion-icon slot="end" name="thumbs-up"></ion-icon>
+          {{"approve" | translate}}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+  
