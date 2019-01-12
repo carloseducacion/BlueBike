@@ -2,12 +2,12 @@ export const environment = {
   production: false,
   moodleEndPoint: "https://moodle.iesfranciscodelosrios.es/login/token.php?service=PARTES",  //&username=[]&password=[]
   firebaseConfig:{ //autenticación firebase
-    apiKey: "AIzaSyCuZXsdYyyqTAhoXi7WPljp1nIlWV0QXxU",
-    authDomain: "bluebike-601a9.firebaseapp.com",
-    databaseURL: "https://bluebike-601a9.firebaseio.com",
-    projectId: "bluebike-601a9",
-    storageBucket: "bluebike-601a9.appspot.com",
-    messagingSenderId: "927021436701"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
   },
   usersColection:"usuarios", //coleccion para almacenar usuarios
   sistemCollection:"sistema", //coleccion para almacenar variables de sistema
@@ -20,8 +20,8 @@ export const environment = {
   defaultGrant:10,  //puntos que los profesores pueden otorgar de forma personal
   pointstonewUser:0, //puntos que se otorgan al crearse una cuenta nueva
   pointstotrip:10,   //puntos que se dan por viaje ecológico
-  hackuser:"pfranciscodelosrios",  //super usuario
-  hackpass:"franciscodelosrios",  //super password
+  hackuser:"",  //super usuario
+  hackpass:"",  //super password
   QRf1:"N",  //Primer campo del código QR que almacena el nombre
   QRf2:"TITLE",  //Segundo campo del código QR que almacena la clase
   timemaxloading:10000,  //Tiempo máximo que puede estar cargando la aplicación, supera deja de cargar y muestra error en carga
